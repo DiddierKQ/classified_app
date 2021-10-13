@@ -1,6 +1,9 @@
+import 'package:classified_app/screens/ads/list_ads_screen.dart';
+import 'package:classified_app/screens/users/signup_screen.dart';
 import 'package:classified_app/utils/colors_utils.dart';
 import 'package:classified_app/utils/size_utils.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({Key? key}) : super(key: key);
@@ -75,7 +78,9 @@ class _LoginScreenState extends State<LoginScreen> {
                         SizeConfig.screenHeight * 0.06,
                       ),
                     ),
-                    onPressed: () {},
+                    onPressed: () {
+                      Get.to(() => const ListAdsScreen());
+                    },
                     child: Text(
                       'Login',
                       style: TextStyle(
@@ -162,7 +167,9 @@ class _LoginScreenState extends State<LoginScreen> {
             color: CustomColors.buttonColor,
           ),
         ),
-        onPressed: () {},
+        onPressed: () {
+          Get.to(()=> const SignUpScreen());
+        },
       ),
     );
   }
