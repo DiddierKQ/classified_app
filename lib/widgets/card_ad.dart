@@ -64,20 +64,25 @@ class _AdCardWidgetWidgetState extends State<AdCardWidget> {
                     top: 8.0, bottom: 4.0, left: 16.0, right: 8.0),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
+                  //mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
-                    Text(
-                      widget.title,
-                      style: const TextStyle(
-                          fontSize: 24,
-                          fontWeight: FontWeight.normal,
-                          color: Colors.white),
+                    Expanded(
+                      child: Text(
+                        widget.title,
+                        style: TextStyle(
+                            fontSize: getProportionateScreenWidth(12),
+                            //fontWeight: FontWeight.normal,
+                            color: Colors.white),
+                      ),
                     ),
-                    Text(
-                      "\$ ${widget.price.toDouble()}",
-                      style: TextStyle(
-                          fontSize: 24,
-                          fontWeight: FontWeight.normal,
-                          color: CustomColors.priceColor),
+                    Expanded(
+                      child: Text(
+                        "\$ ${widget.price.toDouble()}",
+                        style: TextStyle(
+                            fontSize: getProportionateScreenWidth(12),
+                            //fontWeight: FontWeight.normal,
+                            color: CustomColors.priceColor),
+                      ),
                     ),
                   ],
                 ),

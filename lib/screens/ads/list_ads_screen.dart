@@ -1,9 +1,9 @@
-import 'package:classified_app/controllers/ads_controller.dart';
-import 'package:classified_app/models/ads_model.dart';
+import 'package:classified_app/screens/ads/create_ad_screen.dart';
 import 'package:classified_app/utils/colors_utils.dart';
 import 'package:classified_app/widgets/appbar.dart';
 import 'package:classified_app/widgets/card_ad.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 
@@ -26,7 +26,9 @@ class _ListAdsScreenState extends State<ListAdsScreen> {
           _ads = data["data"];
         });
       }).catchError((e) {});
-    } catch (e) {}
+    } catch (e) {
+      print(e);
+    }
   }
 
   @override
@@ -49,9 +51,9 @@ class _ListAdsScreenState extends State<ListAdsScreen> {
         backgroundColor: CustomColors.buttonColor,
         foregroundColor: Colors.white,
         onPressed: () {
-          
+          Get.to(()=>CreateAdScreen());
         },
-        child: const Icon(Icons.camera_alt_outlined),
+        child: const Icon(Icons.add_a_photo_outlined),
       ),
     );
   }

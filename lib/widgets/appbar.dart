@@ -1,5 +1,7 @@
+import 'package:classified_app/screens/users/settings_screen.dart';
 import 'package:classified_app/utils/colors_utils.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class AppBarWidget extends StatelessWidget with PreferredSizeWidget {
   String title;
@@ -23,17 +25,22 @@ class AppBarWidget extends StatelessWidget with PreferredSizeWidget {
       ),      
       actions: [
         showActions ?
-        Container(
-          alignment: Alignment.center,
-          child: CircleAvatar(
-            backgroundImage: AssetImage("assets/logo.png"),
+        GestureDetector(
+          onTap: (){
+            Get.to(()=> const SettingsScreen());
+          },
+          child: Container(
+            alignment: Alignment.center,
+            child: const CircleAvatar(
+              backgroundImage: AssetImage("assets/logo.png"),
+            ),
+            decoration: BoxDecoration(
+              border: Border.all(color: Colors.white.withOpacity(0.5), width: 2),
+              shape: BoxShape.circle,
+            ),
+            //width: 40,
+            //height: 120,
           ),
-          decoration: BoxDecoration(
-            border: Border.all(color: Colors.white.withOpacity(0.5), width: 2),
-            shape: BoxShape.circle,
-          ),
-          //width: 40,
-          //height: 120,
         ) : const SizedBox(),
       ],
       automaticallyImplyLeading:
