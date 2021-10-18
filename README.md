@@ -1,16 +1,1 @@
-# classified_app
-
-A new Flutter project.
-
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+<img src="https://i.postimg.cc/P584Jkft/Screenshot-20211018-013101.jpg" width="200" height="350" />  <img src="https://i.postimg.cc/LsKVZ0hj/Screenshot-20211018-013133.jpg" width="200" height="350" />  <img src="https://i.postimg.cc/jjH46QJm/Screenshot-20211018-013212.jpg" width="200" height="350" />  <img src="https://i.postimg.cc/pTvk31HP/Screenshot-20211018-013221.jpg" width="200" height="350" />  <img src="https://i.postimg.cc/1tKMScmw/Screenshot-20211018-013230.jpg" width="200" height="350" />  <img src="https://i.postimg.cc/QCxmd9CP/Screenshot-20211018-013241.jpg" width="200" height="350" />  <img src="https://i.postimg.cc/PJ34pX8q/Screenshot-20211018-013253.jpg" width="200" height="350" />  <img src="https://i.postimg.cc/dt3nMyzZ/Screenshot-20211018-013319.jpg" width="200" height="350" />  <img src="https://i.postimg.cc/7L0msrjB/Screenshot-20211018-013347.jpg" width="200" height="350" />  <img src="https://i.postimg.cc/CMmJ6N6V/Screenshot-20211018-013404.jpg" width="200" height="350" />  <img src="https://i.postimg.cc/yYGj7NHQ/Screenshot-20211018-013422.jpg" width="200" height="350" />  <img src="https://i.postimg.cc/4xrWQx27/Screenshot-20211018-013442-Contacts.jpg" width="200" height="350" />
