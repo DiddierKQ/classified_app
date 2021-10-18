@@ -113,7 +113,7 @@ class _ListAdsScreenState extends State<ListAdsScreen> {
             SizeConfig.screenWidth * 0.02,
           ),
           child: _ads.isEmpty
-              ? const Text("Please make request")
+              ? const Text('')
               : buildGridView(),
         ),
       ),

@@ -65,7 +65,7 @@ class _MyAdsScreenState extends State<MyAdsScreen> {
         child: Container(
           //padding: const EdgeInsets.all(4.0),
           child: _ads.isEmpty
-              ? const Text("Please make request")
+              ? const Text('')
               : buildLisView(),
         ),
       ),
