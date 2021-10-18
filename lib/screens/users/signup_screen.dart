@@ -1,7 +1,6 @@
 import 'dart:convert';
 
 import 'package:classified_app/screens/users/login_screen.dart';
-import 'package:classified_app/services/auth_service.dart';
 import 'package:classified_app/utils/colors_utils.dart';
 import 'package:classified_app/utils/size_utils.dart';
 import 'package:flutter/material.dart';
@@ -24,12 +23,9 @@ class _SignUpScreenState extends State<SignUpScreen> {
   final TextEditingController _mobileNumberCtrl = TextEditingController();
   final TextEditingController _passwordCtrl = TextEditingController();
 
-  // Instance to the class to manage the token
-  final Auth _auth = Auth();
-
   var apiUrl = Uri.parse("https://adlisting.herokuapp.com/auth/register");
 
-  createAccount() {
+  createAccount() async {
     var body = json.encode({
       "name": _nameCtrl.text,
       "email": _emailCtrl.text,
@@ -38,7 +34,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
     });
 
     try {
-      http
+      await http
           .post(
         apiUrl,
         headers: {
@@ -53,7 +49,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
           showScaffoldMessenger(data["message"]); // false (show a message)
         } else {
           // true (show a message)
-          showScaffoldMessenger(data["message"]);          
+          showScaffoldMessenger(data["message"]);
         }
       }).catchError((e) {
         showScaffoldMessenger(e);
@@ -104,9 +100,12 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   ),
                   buildSignUpButton(),
                   SizedBox(
-                    height: SizeConfig.screenHeight * 0.04,
+                    height: SizeConfig.screenHeight * 0.03,
                   ),
                   buildLoginText(),
+                  SizedBox(
+                    height: SizeConfig.screenHeight * 0.04,
+                  ),
                 ],
               ),
             ),
@@ -294,7 +293,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
           backgroundColor: CustomColors.buttonColor,
           minimumSize: Size(
             SizeConfig.screenWidth,
-            SizeConfig.screenHeight * 0.06,
+            SizeConfig.screenHeight * 0.08,
           ),
         ),
         onPressed: () {
@@ -309,7 +308,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
           'Register Now',
           style: TextStyle(
             color: Colors.white,
-            fontSize: getProportionateScreenWidth(12),
+            fontSize: getProportionateScreenWidth(14),
           ),
         ),
       ),
@@ -324,7 +323,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
         child: Text(
           'Already have an account?',
           style: TextStyle(
-            fontSize: getProportionateScreenWidth(12),
+            fontSize: getProportionateScreenWidth(14),
             color: CustomColors.buttonColor,
           ),
         ),

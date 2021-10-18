@@ -1,20 +1,17 @@
+import 'package:classified_app/screens/ads/detail_ad_screen.dart';
 import 'package:classified_app/utils/size_utils.dart';
 import 'package:classified_app/utils/colors_utils.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+// ignore: must_be_immutable
 class AdCardWidget extends StatefulWidget {
   //const AdCardWidget({ Key? key }) : super(key: key);
-
-  String title;
-  int price;
-  String image;
+  var adData = {};
 
   AdCardWidget({
     Key? key,
-    required this.title,
-    required this.price,
-    required this.image,
+    required this.adData,
   }) : super(key: key);
 
   @override
@@ -31,24 +28,26 @@ class _AdCardWidgetWidgetState extends State<AdCardWidget> {
       height: SizeConfig.screenHeight * 0.60,
       decoration: BoxDecoration(
         color: Colors.white,
-        border: Border.all(color: Colors.grey,),
+        border: Border.all(
+          color: Colors.grey,
+        ),
       ),
       child: Stack(
         children: [
           Align(
             child: GestureDetector(
               onTap: () {
-               
+                Get.to(() => AdDetailsScreen(adData: widget.adData));
               },
               child: Container(
-                width: double.infinity,
-                decoration: BoxDecoration(                  
+                //width: double.infinity,
+                decoration: BoxDecoration(
                   image: DecorationImage(
                     fit: BoxFit.cover,
                     image: NetworkImage(
-                    widget.image,                   
+                      widget.adData['images'][0],
+                    ),
                   ),
-                ),
                 ),
               ),
             ),
@@ -68,19 +67,19 @@ class _AdCardWidgetWidgetState extends State<AdCardWidget> {
                   children: [
                     Expanded(
                       child: Text(
-                        widget.title,
+                        widget.adData['title'],
                         style: TextStyle(
                             fontSize: getProportionateScreenWidth(12),
-                            //fontWeight: FontWeight.normal,
+                            fontWeight: FontWeight.normal,
                             color: Colors.white),
                       ),
                     ),
                     Expanded(
                       child: Text(
-                        "\$ ${widget.price.toDouble()}",
+                        "\$ ${widget.adData['price'].toDouble()}",
                         style: TextStyle(
                             fontSize: getProportionateScreenWidth(12),
-                            //fontWeight: FontWeight.normal,
+                            fontWeight: FontWeight.normal,
                             color: CustomColors.priceColor),
                       ),
                     ),

@@ -23,7 +23,7 @@ class _LoginScreenState extends State<LoginScreen> {
   final TextEditingController _emailCtrl = TextEditingController();
   final TextEditingController _passwordCtrl = TextEditingController();
   // Instance to the class to manage the token
-  final Auth _auth = Auth();
+  final Auth _auth = Get.put(Auth());
 
   var apiUrl = Uri.parse("https://adlisting.herokuapp.com/auth/login");
 
@@ -50,7 +50,7 @@ class _LoginScreenState extends State<LoginScreen> {
         } else {
           // true (save the token and enter in the home screen)
           var token = data["data"]["token"];
-          _auth.setToken(token);
+          _auth.token.value = token;
           Get.offAll(() => const ListAdsScreen());
         }
       }).catchError((e) {
@@ -94,9 +94,12 @@ class _LoginScreenState extends State<LoginScreen> {
                   ),
                   buildLoginButton(),
                   SizedBox(
-                    height: SizeConfig.screenHeight * 0.04,
+                    height: SizeConfig.screenHeight * 0.03,
                   ),
                   buildSignUpText(),
+                  SizedBox(
+                    height: SizeConfig.screenHeight * 0.04,
+                  ),
                 ],
               ),
             ),
@@ -218,7 +221,7 @@ class _LoginScreenState extends State<LoginScreen> {
           backgroundColor: CustomColors.buttonColor,
           minimumSize: Size(
             SizeConfig.screenWidth,
-            SizeConfig.screenHeight * 0.06,
+            SizeConfig.screenHeight * 0.08,
           ),
         ),
         onPressed: () {
@@ -233,7 +236,7 @@ class _LoginScreenState extends State<LoginScreen> {
           'Login',
           style: TextStyle(
             color: Colors.white,
-            fontSize: getProportionateScreenWidth(12),
+            fontSize: getProportionateScreenWidth(14),
           ),
         ),
       ),
@@ -248,7 +251,7 @@ class _LoginScreenState extends State<LoginScreen> {
         child: Text(
           "Don't have any account?",
           style: TextStyle(
-            fontSize: getProportionateScreenWidth(12),
+            fontSize: getProportionateScreenWidth(14),
             color: CustomColors.buttonColor,
           ),
         ),

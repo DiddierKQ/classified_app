@@ -1,11 +1,5 @@
-class Auth {
-  String token = "";
+import 'package:get/get.dart';
 
-  getToken(){
-    return token;
-  }
-
-  setToken(value){
-    token = value;
-  }
+class Auth extends GetxController {
+  var token = "".obs;
 }
